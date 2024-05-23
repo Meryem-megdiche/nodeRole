@@ -48,9 +48,12 @@ doc.end();
   app.use(express.json());
 
 // Ajouter le middleware CORS à votre application Express
+const allowedOrigins = '*';
+// Ajouter le middleware CORS à votre application Express
 app.use(cors({
-  origin: 'http://localhost:3000'
+  origin: allowedOrigins
 }));
+
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.get('/', (req, res) => {
