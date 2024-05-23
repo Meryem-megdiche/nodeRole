@@ -1,7 +1,8 @@
 const User = require("../models/user");
 const nodemailer = require('nodemailer');
 const crypto = require('crypto');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
+
 
 module.exports = class UserService{
     static generatePassword() {
